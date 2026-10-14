@@ -9,4 +9,13 @@ std::shared_ptr<maf::providers::ILLMProvider> LLMStrategyContext::getProvider() 
     return provider;
 }
 
-} 
+
+StrategyDecision DefaultStrategy::decide(const Observation& observation, LLMStrategyContext& context) {
+    
+    return StrategyDecision{
+        "Standard execution path",
+        "Proceeding based on observation goal: " + observation.goal
+    };
+}
+
+}
